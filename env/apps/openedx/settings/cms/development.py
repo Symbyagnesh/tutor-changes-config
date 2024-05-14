@@ -2,17 +2,17 @@
 import os
 from cms.envs.devstack import *
 
-LMS_BASE = "edlearn.in:8000"
+LMS_BASE = "openelephant.com:8000"
 LMS_ROOT_URL = "http://" + LMS_BASE
 
-CMS_BASE = "studio.edlearn.in:8001"
+CMS_BASE = "studio.openelephant.com:8001"
 CMS_ROOT_URL = "http://" + CMS_BASE
 
 # Authentication
 SOCIAL_AUTH_EDX_OAUTH2_KEY = "cms-sso-dev"
 SOCIAL_AUTH_EDX_OAUTH2_PUBLIC_URL_ROOT = LMS_ROOT_URL
 
-FEATURES["PREVIEW_LMS_BASE"] = "preview.edlearn.in:8000"
+FEATURES["PREVIEW_LMS_BASE"] = "preview.openelephant.com:8000"
 
 ####### Settings common to LMS and CMS
 import json
@@ -105,7 +105,7 @@ CACHES = {
 SITE_ID = 2
 
 # Contact addresses
-CONTACT_MAILING_ADDRESS = "EdLearn - https://edlearn.in"
+CONTACT_MAILING_ADDRESS = "OpenElephant - https://openelephant.com"
 DEFAULT_FROM_EMAIL = ENV_TOKENS.get("DEFAULT_FROM_EMAIL", ENV_TOKENS["CONTACT_EMAIL"])
 DEFAULT_FEEDBACK_EMAIL = ENV_TOKENS.get("DEFAULT_FEEDBACK_EMAIL", ENV_TOKENS["CONTACT_EMAIL"])
 SERVER_EMAIL = ENV_TOKENS.get("SERVER_EMAIL", ENV_TOKENS["CONTACT_EMAIL"])
@@ -195,7 +195,7 @@ LANGUAGE_COOKIE_NAME = "openedx-language-preference"
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
 
-JWT_AUTH["JWT_ISSUER"] = "https://edlearn.in/oauth2"
+JWT_AUTH["JWT_ISSUER"] = "https://openelephant.com/oauth2"
 JWT_AUTH["JWT_AUDIENCE"] = "openedx"
 JWT_AUTH["JWT_SECRET_KEY"] = "v4rDen3yNpHEmmp1p0aVvZ6y"
 JWT_AUTH["JWT_PRIVATE_SIGNING_JWK"] = json.dumps(
@@ -226,7 +226,7 @@ JWT_AUTH["JWT_PUBLIC_SIGNING_JWK_SET"] = json.dumps(
 )
 JWT_AUTH["JWT_ISSUERS"] = [
     {
-        "ISSUER": "https://edlearn.in/oauth2",
+        "ISSUER": "https://openelephant.com/oauth2",
         "AUDIENCE": "openedx",
         "SECRET_KEY": "v4rDen3yNpHEmmp1p0aVvZ6y"
     }
@@ -260,7 +260,7 @@ FEATURES["ENABLE_DISCUSSION_SERVICE"] = True
 ######## End of settings common to LMS and CMS
 
 ######## Common CMS settings
-STUDIO_NAME = "EdLearn - Studio"
+STUDIO_NAME = "OpenElephant - Studio"
 
 CACHES["staticfiles"] = {
     "KEY_PREFIX": "staticfiles_cms",
@@ -294,7 +294,7 @@ WEBPACK_CONFIG_PATH = "webpack.dev.config.js"
 
 # MFE-specific settings
 
-COURSE_AUTHORING_MICROFRONTEND_URL = "http://apps.edlearn.in:2001/course-authoring"
-CORS_ORIGIN_WHITELIST.append("http://apps.edlearn.in:2001")
-LOGIN_REDIRECT_WHITELIST.append("apps.edlearn.in:2001")
-CSRF_TRUSTED_ORIGINS.append("http://apps.edlearn.in:2001")
+COURSE_AUTHORING_MICROFRONTEND_URL = "http://apps.openelephant.com:2001/course-authoring"
+CORS_ORIGIN_WHITELIST.append("http://apps.openelephant.com:2001")
+LOGIN_REDIRECT_WHITELIST.append("apps.openelephant.com:2001")
+CSRF_TRUSTED_ORIGINS.append("http://apps.openelephant.com:2001")

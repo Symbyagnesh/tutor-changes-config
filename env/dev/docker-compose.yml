@@ -24,7 +24,7 @@ services:
     networks:
       default:
         aliases:
-          - "edlearn.in"
+          - "openelephant.com"
 
   cms:
     <<: *openedx-service
@@ -59,7 +59,7 @@ services:
     networks:
       default:
         aliases:
-          - "discovery.edlearn.in"
+          - "discovery.openelephant.com"
   forum:
     stdin_open: true
     tty: true

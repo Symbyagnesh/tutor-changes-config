@@ -32,7 +32,7 @@
     }
 }
 
-edlearn.in{$default_site_port}, preview.edlearn.in{$default_site_port} {
+openelephant.com{$default_site_port}, preview.openelephant.com{$default_site_port} {
     @favicon_matcher {
         path_regexp ^/favicon.ico$
     }
@@ -56,7 +56,7 @@ edlearn.in{$default_site_port}, preview.edlearn.in{$default_site_port} {
     }
 }
 
-studio.edlearn.in{$default_site_port} {
+studio.openelephant.com{$default_site_port} {
     @favicon_matcher {
         path_regexp ^/favicon.ico$
     }
@@ -74,15 +74,15 @@ studio.edlearn.in{$default_site_port} {
 }
 
 # Discovery
-discovery.edlearn.in{$default_site_port} {
+discovery.openelephant.com{$default_site_port} {
     request_body {
         max_size 10MB
     }
 
     import proxy "discovery:8000"
 }
-apps.edlearn.in{$default_site_port} {
-    redir / https://edlearn.in
+apps.openelephant.com{$default_site_port} {
+    redir / https://openelephant.com
     request_body {
         max_size 2MB
     }

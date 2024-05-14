@@ -16,7 +16,7 @@ module.exports = merge(baseDevConfig, {
     allowedHosts: 'all',
     proxy: {
       '/api/mfe_config/v1': {
-        target: 'http://edlearn.in:8000',
+        target: 'http://openelephant.com:8000',
         changeOrigin: true,
       }
     }

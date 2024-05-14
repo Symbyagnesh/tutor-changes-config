@@ -93,7 +93,7 @@ CACHES = {
 SITE_ID = 2
 
 # Contact addresses
-CONTACT_MAILING_ADDRESS = "EdLearn - https://edlearn.in"
+CONTACT_MAILING_ADDRESS = "OpenElephant - https://openelephant.com"
 DEFAULT_FROM_EMAIL = ENV_TOKENS.get("DEFAULT_FROM_EMAIL", ENV_TOKENS["CONTACT_EMAIL"])
 DEFAULT_FEEDBACK_EMAIL = ENV_TOKENS.get("DEFAULT_FEEDBACK_EMAIL", ENV_TOKENS["CONTACT_EMAIL"])
 SERVER_EMAIL = ENV_TOKENS.get("SERVER_EMAIL", ENV_TOKENS["CONTACT_EMAIL"])
@@ -183,7 +183,7 @@ LANGUAGE_COOKIE_NAME = "openedx-language-preference"
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
 
-JWT_AUTH["JWT_ISSUER"] = "https://edlearn.in/oauth2"
+JWT_AUTH["JWT_ISSUER"] = "https://openelephant.com/oauth2"
 JWT_AUTH["JWT_AUDIENCE"] = "openedx"
 JWT_AUTH["JWT_SECRET_KEY"] = "v4rDen3yNpHEmmp1p0aVvZ6y"
 JWT_AUTH["JWT_PRIVATE_SIGNING_JWK"] = json.dumps(
@@ -214,7 +214,7 @@ JWT_AUTH["JWT_PUBLIC_SIGNING_JWK_SET"] = json.dumps(
 )
 JWT_AUTH["JWT_ISSUERS"] = [
     {
-        "ISSUER": "https://edlearn.in/oauth2",
+        "ISSUER": "https://openelephant.com/oauth2",
         "AUDIENCE": "openedx",
         "SECRET_KEY": "v4rDen3yNpHEmmp1p0aVvZ6y"
     }
@@ -248,7 +248,7 @@ FEATURES["ENABLE_DISCUSSION_SERVICE"] = True
 ######## End of settings common to LMS and CMS
 
 ######## Common CMS settings
-STUDIO_NAME = "EdLearn - Studio"
+STUDIO_NAME = "OpenElephant - Studio"
 
 CACHES["staticfiles"] = {
     "KEY_PREFIX": "staticfiles_cms",
@@ -280,17 +280,17 @@ ALLOWED_HOSTS = [
     ENV_TOKENS.get("CMS_BASE"),
     "cms",
 ]
-CORS_ORIGIN_WHITELIST.append("https://studio.edlearn.in")
+CORS_ORIGIN_WHITELIST.append("https://studio.openelephant.com")
 
 # Authentication
 SOCIAL_AUTH_EDX_OAUTH2_KEY = "cms-sso"
-SOCIAL_AUTH_EDX_OAUTH2_PUBLIC_URL_ROOT = "https://edlearn.in"
+SOCIAL_AUTH_EDX_OAUTH2_PUBLIC_URL_ROOT = "https://openelephant.com"
 
 # MFE-specific settings
 
-COURSE_AUTHORING_MICROFRONTEND_URL = "https://apps.edlearn.in/course-authoring"
+COURSE_AUTHORING_MICROFRONTEND_URL = "https://apps.openelephant.com/course-authoring"
 
 
-LOGIN_REDIRECT_WHITELIST.append("apps.edlearn.in")
-CORS_ORIGIN_WHITELIST.append("https://apps.edlearn.in")
-CSRF_TRUSTED_ORIGINS.append("https://apps.edlearn.in")
+LOGIN_REDIRECT_WHITELIST.append("apps.openelephant.com")
+CORS_ORIGIN_WHITELIST.append("https://apps.openelephant.com")
+CSRF_TRUSTED_ORIGINS.append("https://apps.openelephant.com")

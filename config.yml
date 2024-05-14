@@ -1,4 +1,4 @@
-CMS_HOST: studio.edlearn.in
+CMS_HOST: studio.openelephant.com
 CMS_OAUTH2_SECRET: gCPG3UyCct3zICRzazdrB5fS
 CONTACT_EMAIL: contact@example.com
 DISCOVERY_MYSQL_PASSWORD: YiXGMUKu
@@ -61,13 +61,13 @@ JWT_RSA_PRIVATE_KEY: '-----BEGIN RSA PRIVATE KEY-----
 
   -----END RSA PRIVATE KEY-----'
 LANGUAGE_CODE: en
-LMS_HOST: edlearn.in
+LMS_HOST: openelephant.com
 MOUNTS:
 - /home/ubuntu/edx-platform
 MYSQL_ROOT_PASSWORD: uicgnjpc
 OPENEDX_MYSQL_PASSWORD: oSO1hp0E
 OPENEDX_SECRET_KEY: v4rDen3yNpHEmmp1p0aVvZ6y
-PLATFORM_NAME: EdLearn
+PLATFORM_NAME: OpenElephant
 PLUGINS:
 - custom_plugins
 - discovery

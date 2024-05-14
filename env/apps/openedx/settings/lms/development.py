@@ -93,7 +93,7 @@ CACHES = {
 SITE_ID = 2
 
 # Contact addresses
-CONTACT_MAILING_ADDRESS = "EdLearn - https://edlearn.in"
+CONTACT_MAILING_ADDRESS = "OpenElephant - https://openelephant.com"
 DEFAULT_FROM_EMAIL = ENV_TOKENS.get("DEFAULT_FROM_EMAIL", ENV_TOKENS["CONTACT_EMAIL"])
 DEFAULT_FEEDBACK_EMAIL = ENV_TOKENS.get("DEFAULT_FEEDBACK_EMAIL", ENV_TOKENS["CONTACT_EMAIL"])
 SERVER_EMAIL = ENV_TOKENS.get("SERVER_EMAIL", ENV_TOKENS["CONTACT_EMAIL"])
@@ -183,7 +183,7 @@ LANGUAGE_COOKIE_NAME = "openedx-language-preference"
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
 
-JWT_AUTH["JWT_ISSUER"] = "https://edlearn.in/oauth2"
+JWT_AUTH["JWT_ISSUER"] = "https://openelephant.com/oauth2"
 JWT_AUTH["JWT_AUDIENCE"] = "openedx"
 JWT_AUTH["JWT_SECRET_KEY"] = "v4rDen3yNpHEmmp1p0aVvZ6y"
 JWT_AUTH["JWT_PRIVATE_SIGNING_JWK"] = json.dumps(
@@ -214,7 +214,7 @@ JWT_AUTH["JWT_PUBLIC_SIGNING_JWK_SET"] = json.dumps(
 )
 JWT_AUTH["JWT_ISSUERS"] = [
     {
-        "ISSUER": "https://edlearn.in/oauth2",
+        "ISSUER": "https://openelephant.com/oauth2",
         "AUDIENCE": "openedx",
         "SECRET_KEY": "v4rDen3yNpHEmmp1p0aVvZ6y"
     }
@@ -248,7 +248,7 @@ FEATURES["ENABLE_DISCUSSION_SERVICE"] = True
 ######## End of settings common to LMS and CMS
 
 ######## Common LMS settings
-LOGIN_REDIRECT_WHITELIST = ["studio.edlearn.in"]
+LOGIN_REDIRECT_WHITELIST = ["studio.openelephant.com"]
 
 # Better layout of honor code/tos links during registration
 REGISTRATION_EXTRA_FIELDS["terms_of_service"] = "hidden"
@@ -314,22 +314,22 @@ LEARNER_HOME_MFE_REDIRECT_PERCENTAGE = 100
 # Setup correct webpack configuration file for development
 WEBPACK_CONFIG_PATH = "webpack.dev.config.js"
 
-LMS_BASE = "edlearn.in:8000"
+LMS_BASE = "openelephant.com:8000"
 LMS_ROOT_URL = "http://{}".format(LMS_BASE)
 LMS_INTERNAL_ROOT_URL = LMS_ROOT_URL
 SITE_NAME = LMS_BASE
-CMS_BASE = "studio.edlearn.in:8001"
+CMS_BASE = "studio.openelephant.com:8001"
 CMS_ROOT_URL = "http://{}".format(CMS_BASE)
 LOGIN_REDIRECT_WHITELIST.append(CMS_BASE)
 
 # Session cookie
-SESSION_COOKIE_DOMAIN = "edlearn.in"
+SESSION_COOKIE_DOMAIN = "openelephant.com"
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SAMESITE = "Lax"
 
 # CMS authentication
-IDA_LOGOUT_URI_LIST.append("http://studio.edlearn.in:8001/logout/")
+IDA_LOGOUT_URI_LIST.append("http://studio.openelephant.com:8001/logout/")
 
 FEATURES["ENABLE_COURSEWARE_MICROFRONTEND"] = False
 
@@ -346,130 +346,130 @@ LOGGING["loggers"]["oauth2_provider"] = {
 # Dynamic config API settings
 # https://openedx.github.io/frontend-platform/module-Config.html
 MFE_CONFIG = {
-    "BASE_URL": "apps.edlearn.in",
+    "BASE_URL": "apps.openelephant.com",
     "CSRF_TOKEN_API_PATH": "/csrf/api/v1/token",
     "CREDENTIALS_BASE_URL": "",
-    "DISCOVERY_API_BASE_URL": "http://discovery.edlearn.in:8381",
-    "FAVICON_URL": "http://edlearn.in/favicon.ico",
+    "DISCOVERY_API_BASE_URL": "http://discovery.openelephant.com:8381",
+    "FAVICON_URL": "http://openelephant.com/favicon.ico",
     "INFO_EMAIL": "contact@example.com",
     "LANGUAGE_PREFERENCE_COOKIE_NAME": "openedx-language-preference",
-    "LMS_BASE_URL": "http://edlearn.in:8000",
-    "LOGIN_URL": "http://edlearn.in:8000/login",
-    "LOGO_URL": "http://edlearn.in:8000/theming/asset/images/logo.png",
-    "LOGO_WHITE_URL": "http://edlearn.in:8000/theming/asset/images/logo.png",
-    "LOGO_TRADEMARK_URL": "http://edlearn.in:8000/theming/asset/images/logo.png",
-    "LOGOUT_URL": "http://edlearn.in:8000/logout",
-    "MARKETING_SITE_BASE_URL": "http://edlearn.in:8000",
+    "LMS_BASE_URL": "http://openelephant.com:8000",
+    "LOGIN_URL": "http://openelephant.com:8000/login",
+    "LOGO_URL": "http://openelephant.com:8000/theming/asset/images/logo.png",
+    "LOGO_WHITE_URL": "http://openelephant.com:8000/theming/asset/images/logo.png",
+    "LOGO_TRADEMARK_URL": "http://openelephant.com:8000/theming/asset/images/logo.png",
+    "LOGOUT_URL": "http://openelephant.com:8000/logout",
+    "MARKETING_SITE_BASE_URL": "http://openelephant.com:8000",
     "PASSWORD_RESET_SUPPORT_LINK": "mailto:contact@example.com",
-    "REFRESH_ACCESS_TOKEN_ENDPOINT": "http://edlearn.in:8000/login_refresh",
-    "SITE_NAME": "EdLearn",
-    "STUDIO_BASE_URL": "http://studio.edlearn.in:8001",
+    "REFRESH_ACCESS_TOKEN_ENDPOINT": "http://openelephant.com:8000/login_refresh",
+    "SITE_NAME": "OpenElephant",
+    "STUDIO_BASE_URL": "http://studio.openelephant.com:8001",
     "USER_INFO_COOKIE_NAME": "user-info",
     "ACCESS_TOKEN_COOKIE_NAME": "edx-jwt-cookie-header-payload",
 }
 
 # MFE-specific settings
 
-AUTHN_MICROFRONTEND_URL = "http://apps.edlearn.in:1999/authn"
-AUTHN_MICROFRONTEND_DOMAIN  = "apps.edlearn.in/authn"
+AUTHN_MICROFRONTEND_URL = "http://apps.openelephant.com:1999/authn"
+AUTHN_MICROFRONTEND_DOMAIN  = "apps.openelephant.com/authn"
 MFE_CONFIG["DISABLE_ENTERPRISE_LOGIN"] = True
 
 
 
-ACCOUNT_MICROFRONTEND_URL = "http://apps.edlearn.in:1997/account/"
+ACCOUNT_MICROFRONTEND_URL = "http://apps.openelephant.com:1997/account/"
 MFE_CONFIG["ACCOUNT_SETTINGS_URL"] = ACCOUNT_MICROFRONTEND_URL
 
 
 
 MFE_CONFIG["ENABLE_NEW_EDITOR_PAGES"] = True
 MFE_CONFIG["ENABLE_PROGRESS_GRAPH_SETTINGS"] = True
-MFE_CONFIG["COURSE_AUTHORING_MICROFRONTEND_URL"] = "http://apps.edlearn.in:2001/course-authoring"
+MFE_CONFIG["COURSE_AUTHORING_MICROFRONTEND_URL"] = "http://apps.openelephant.com:2001/course-authoring"
 
 
 
-DISCUSSIONS_MICROFRONTEND_URL = "http://apps.edlearn.in:2002/discussions"
+DISCUSSIONS_MICROFRONTEND_URL = "http://apps.openelephant.com:2002/discussions"
 MFE_CONFIG["DISCUSSIONS_MFE_BASE_URL"] = DISCUSSIONS_MICROFRONTEND_URL
 DISCUSSIONS_MFE_FEEDBACK_URL = None
 
 
 
-WRITABLE_GRADEBOOK_URL = "http://apps.edlearn.in:1994/gradebook"
+WRITABLE_GRADEBOOK_URL = "http://apps.openelephant.com:1994/gradebook"
 
 
 
-LEARNER_HOME_MICROFRONTEND_URL = "http://apps.edlearn.in:1996/learner-dashboard/"
+LEARNER_HOME_MICROFRONTEND_URL = "http://apps.openelephant.com:1996/learner-dashboard/"
 
 
 
-LEARNING_MICROFRONTEND_URL = "http://apps.edlearn.in:2000/learning"
-MFE_CONFIG["LEARNING_BASE_URL"] = "http://apps.edlearn.in:2000"
+LEARNING_MICROFRONTEND_URL = "http://apps.openelephant.com:2000/learning"
+MFE_CONFIG["LEARNING_BASE_URL"] = "http://apps.openelephant.com:2000"
 
 
 
-ORA_GRADING_MICROFRONTEND_URL = "http://apps.edlearn.in:1993/ora-grading"
+ORA_GRADING_MICROFRONTEND_URL = "http://apps.openelephant.com:1993/ora-grading"
 
 
 
-PROFILE_MICROFRONTEND_URL = "http://apps.edlearn.in:1995/profile/u/"
-MFE_CONFIG["ACCOUNT_PROFILE_URL"] = "http://apps.edlearn.in:1995/profile"
+PROFILE_MICROFRONTEND_URL = "http://apps.openelephant.com:1995/profile/u/"
+MFE_CONFIG["ACCOUNT_PROFILE_URL"] = "http://apps.openelephant.com:1995/profile"
 
 
 
-COMMUNICATIONS_MICROFRONTEND_URL = "http://apps.edlearn.in:1984/communications"
+COMMUNICATIONS_MICROFRONTEND_URL = "http://apps.openelephant.com:1984/communications"
 MFE_CONFIG["SCHEDULE_EMAIL_SECTION"] = True
 
 
 # Cors configuration
 
 # authn MFE
-CORS_ORIGIN_WHITELIST.append("http://apps.edlearn.in:1999")
-LOGIN_REDIRECT_WHITELIST.append("apps.edlearn.in:1999")
-CSRF_TRUSTED_ORIGINS.append("http://apps.edlearn.in:1999")
+CORS_ORIGIN_WHITELIST.append("http://apps.openelephant.com:1999")
+LOGIN_REDIRECT_WHITELIST.append("apps.openelephant.com:1999")
+CSRF_TRUSTED_ORIGINS.append("http://apps.openelephant.com:1999")
 
 # account MFE
-CORS_ORIGIN_WHITELIST.append("http://apps.edlearn.in:1997")
-LOGIN_REDIRECT_WHITELIST.append("apps.edlearn.in:1997")
-CSRF_TRUSTED_ORIGINS.append("http://apps.edlearn.in:1997")
+CORS_ORIGIN_WHITELIST.append("http://apps.openelephant.com:1997")
+LOGIN_REDIRECT_WHITELIST.append("apps.openelephant.com:1997")
+CSRF_TRUSTED_ORIGINS.append("http://apps.openelephant.com:1997")
 
 # communications MFE
-CORS_ORIGIN_WHITELIST.append("http://apps.edlearn.in:1984")
-LOGIN_REDIRECT_WHITELIST.append("apps.edlearn.in:1984")
-CSRF_TRUSTED_ORIGINS.append("http://apps.edlearn.in:1984")
+CORS_ORIGIN_WHITELIST.append("http://apps.openelephant.com:1984")
+LOGIN_REDIRECT_WHITELIST.append("apps.openelephant.com:1984")
+CSRF_TRUSTED_ORIGINS.append("http://apps.openelephant.com:1984")
 
 # course-authoring MFE
-CORS_ORIGIN_WHITELIST.append("http://apps.edlearn.in:2001")
-LOGIN_REDIRECT_WHITELIST.append("apps.edlearn.in:2001")
-CSRF_TRUSTED_ORIGINS.append("http://apps.edlearn.in:2001")
+CORS_ORIGIN_WHITELIST.append("http://apps.openelephant.com:2001")
+LOGIN_REDIRECT_WHITELIST.append("apps.openelephant.com:2001")
+CSRF_TRUSTED_ORIGINS.append("http://apps.openelephant.com:2001")
 
 # discussions MFE
-CORS_ORIGIN_WHITELIST.append("http://apps.edlearn.in:2002")
-LOGIN_REDIRECT_WHITELIST.append("apps.edlearn.in:2002")
-CSRF_TRUSTED_ORIGINS.append("http://apps.edlearn.in:2002")
+CORS_ORIGIN_WHITELIST.append("http://apps.openelephant.com:2002")
+LOGIN_REDIRECT_WHITELIST.append("apps.openelephant.com:2002")
+CSRF_TRUSTED_ORIGINS.append("http://apps.openelephant.com:2002")
 
 # gradebook MFE
-CORS_ORIGIN_WHITELIST.append("http://apps.edlearn.in:1994")
-LOGIN_REDIRECT_WHITELIST.append("apps.edlearn.in:1994")
-CSRF_TRUSTED_ORIGINS.append("http://apps.edlearn.in:1994")
+CORS_ORIGIN_WHITELIST.append("http://apps.openelephant.com:1994")
+LOGIN_REDIRECT_WHITELIST.append("apps.openelephant.com:1994")
+CSRF_TRUSTED_ORIGINS.append("http://apps.openelephant.com:1994")
 
 # learner-dashboard MFE
-CORS_ORIGIN_WHITELIST.append("http://apps.edlearn.in:1996")
-LOGIN_REDIRECT_WHITELIST.append("apps.edlearn.in:1996")
-CSRF_TRUSTED_ORIGINS.append("http://apps.edlearn.in:1996")
+CORS_ORIGIN_WHITELIST.append("http://apps.openelephant.com:1996")
+LOGIN_REDIRECT_WHITELIST.append("apps.openelephant.com:1996")
+CSRF_TRUSTED_ORIGINS.append("http://apps.openelephant.com:1996")
 
 # learning MFE
-CORS_ORIGIN_WHITELIST.append("http://apps.edlearn.in:2000")
-LOGIN_REDIRECT_WHITELIST.append("apps.edlearn.in:2000")
-CSRF_TRUSTED_ORIGINS.append("http://apps.edlearn.in:2000")
+CORS_ORIGIN_WHITELIST.append("http://apps.openelephant.com:2000")
+LOGIN_REDIRECT_WHITELIST.append("apps.openelephant.com:2000")
+CSRF_TRUSTED_ORIGINS.append("http://apps.openelephant.com:2000")
 
 # ora-grading MFE
-CORS_ORIGIN_WHITELIST.append("http://apps.edlearn.in:1993")
-LOGIN_REDIRECT_WHITELIST.append("apps.edlearn.in:1993")
-CSRF_TRUSTED_ORIGINS.append("http://apps.edlearn.in:1993")
+CORS_ORIGIN_WHITELIST.append("http://apps.openelephant.com:1993")
+LOGIN_REDIRECT_WHITELIST.append("apps.openelephant.com:1993")
+CSRF_TRUSTED_ORIGINS.append("http://apps.openelephant.com:1993")
 
 # profile MFE
-CORS_ORIGIN_WHITELIST.append("http://apps.edlearn.in:1995")
-LOGIN_REDIRECT_WHITELIST.append("apps.edlearn.in:1995")
-CSRF_TRUSTED_ORIGINS.append("http://apps.edlearn.in:1995")
+CORS_ORIGIN_WHITELIST.append("http://apps.openelephant.com:1995")
+LOGIN_REDIRECT_WHITELIST.append("apps.openelephant.com:1995")
+CSRF_TRUSTED_ORIGINS.append("http://apps.openelephant.com:1995")
 
 
 
