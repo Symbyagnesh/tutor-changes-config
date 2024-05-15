@@ -19,3 +19,9 @@ hooks.Filters.ENV_PATCHES.add_item(
         "SKIP_EMAIL_VALIDATION = True"
     )
 )
+hooks.Filters.ENV_PATCHES.add_item(
+    (
+        "openedx-lms-common-settings",
+        "CORS_ORIGIN_ALLOW_ALL = True"
+    )
+)

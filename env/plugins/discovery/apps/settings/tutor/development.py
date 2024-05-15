@@ -3,7 +3,7 @@ from ..devstack import *
 SECRET_KEY = "Gb7oxJPGzNX1QzPYzhPw"
 ALLOWED_HOSTS = [
     "discovery",
-    "discovery.openelephant.com"
+    "discovery.openelephant.com "
 ]
 
 PLATFORM_NAME = "OpenElephant"
@@ -65,7 +65,7 @@ LOGGING["loggers"]["algoliasearch_django"] = {"level": "WARNING"}
 OAUTH_API_TIMEOUT = 5
 
 import json
-JWT_AUTH["JWT_ISSUER"] = "https://openelephant.com/oauth2"
+JWT_AUTH["JWT_ISSUER"] = "https://openelephant.com /oauth2"
 JWT_AUTH["JWT_AUDIENCE"] = "openedx"
 JWT_AUTH["JWT_SECRET_KEY"] = "v4rDen3yNpHEmmp1p0aVvZ6y"
 # TODO assign a discovery-specific public key
@@ -83,14 +83,14 @@ JWT_AUTH["JWT_PUBLIC_SIGNING_JWK_SET"] = json.dumps(
 )
 JWT_AUTH["JWT_ISSUERS"] = [
     {
-        "ISSUER": "https://openelephant.com/oauth2",
+        "ISSUER": "https://openelephant.com /oauth2",
         "AUDIENCE": "openedx",
         "SECRET_KEY": "v4rDen3yNpHEmmp1p0aVvZ6y"
     }
 ]
 
 EDX_DRF_EXTENSIONS = {
-    'OAUTH2_USER_INFO_URL': 'https://openelephant.com/oauth2/user_info',
+    'OAUTH2_USER_INFO_URL': 'https://openelephant.com /oauth2/user_info',
 }
 
 
@@ -101,7 +101,7 @@ BACKEND_SERVICE_EDX_OAUTH2_PROVIDER_URL = "http://lms:8000/oauth2"
 
 SOCIAL_AUTH_EDX_OAUTH2_KEY = "discovery-sso-dev"
 SOCIAL_AUTH_EDX_OAUTH2_SECRET = "sCj1BP1u"
-SOCIAL_AUTH_EDX_OAUTH2_ISSUER = "http://openelephant.com:8000"
+SOCIAL_AUTH_EDX_OAUTH2_ISSUER = "http://openelephant.com :8000"
 SOCIAL_AUTH_EDX_OAUTH2_URL_ROOT = SOCIAL_AUTH_EDX_OAUTH2_ISSUER
 SOCIAL_AUTH_EDX_OAUTH2_PUBLIC_URL_ROOT = SOCIAL_AUTH_EDX_OAUTH2_ISSUER
 SOCIAL_AUTH_EDX_OAUTH2_LOGOUT_URL = SOCIAL_AUTH_EDX_OAUTH2_ISSUER + "/logout"
@@ -109,6 +109,6 @@ SOCIAL_AUTH_EDX_OAUTH2_LOGOUT_URL = SOCIAL_AUTH_EDX_OAUTH2_ISSUER + "/logout"
 # Disable API caching, which makes it a pain to troubleshoot issues
 USE_API_CACHING = False
 
-DISCOVERY_BASE_URL = "http://discovery.openelephant.com:8381"
+DISCOVERY_BASE_URL = "http://discovery.openelephant.com :8381"
 MEDIA_URL = DISCOVERY_BASE_URL + "/media/"
 

@@ -70,7 +70,6 @@ OPENEDX_SECRET_KEY: v4rDen3yNpHEmmp1p0aVvZ6y
 PLATFORM_NAME: OpenElephant
 PLUGINS:
 - custom_plugins
-- discovery
 - forum
 - mfe
 PLUGIN_INDEXES:

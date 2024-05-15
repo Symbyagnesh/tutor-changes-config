@@ -73,14 +73,6 @@ studio.openelephant.com{$default_site_port} {
     }
 }
 
-# Discovery
-discovery.openelephant.com{$default_site_port} {
-    request_body {
-        max_size 10MB
-    }
-
-    import proxy "discovery:8000"
-}
 apps.openelephant.com{$default_site_port} {
     redir / https://openelephant.com
     request_body {

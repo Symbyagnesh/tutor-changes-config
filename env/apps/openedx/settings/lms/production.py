@@ -291,7 +291,7 @@ for folder in [DATA_DIR, LOG_DIR, MEDIA_ROOT, STATIC_ROOT_BASE, ORA2_FILEUPLOAD_
 
 FEATURES['ENABLE_SPECIAL_EXAMS'] = True
 SKIP_EMAIL_VALIDATION = True
-FEATURES["ENABLE_COURSE_DISCOVERY"] = True
+CORS_ORIGIN_ALLOW_ALL = True
 # MFE: enable API and set a low cache timeout for the settings. otherwise, weird
 # configuration bugs occur. Also, the view is not costly at all, and it's also cached on
 # the frontend. (5 minutes, hardcoded)
@@ -338,7 +338,7 @@ MFE_CONFIG = {
     "BASE_URL": "apps.openelephant.com",
     "CSRF_TOKEN_API_PATH": "/csrf/api/v1/token",
     "CREDENTIALS_BASE_URL": "",
-    "DISCOVERY_API_BASE_URL": "https://discovery.openelephant.com",
+    "DISCOVERY_API_BASE_URL": "",
     "FAVICON_URL": "https://openelephant.com/favicon.ico",
     "INFO_EMAIL": "contact@example.com",
     "LANGUAGE_PREFERENCE_COOKIE_NAME": "openedx-language-preference",
